@@ -1,0 +1,15 @@
+@startuml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(usr, "Usuário", "Usuário que irá jogar.")
+
+System(game, "Sistema do Jogo", "Permite jogadores batalharem e capturarem os pokemons, assim como explorar mapas.")
+
+System_Ext(pokedex, "Pokedex Api", "Api para obter todas as informações dos pokemons e abilidades.")
+
+Rel(usr, game, "Joga", "HTTP")
+Rel(game, pokedex, "Usa", "HTTP")
+
+@enduml
